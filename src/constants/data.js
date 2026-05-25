@@ -162,5 +162,5 @@ export const NAV_LINKS = [
   { label: 'Esquadras', href: '/#esquadras' },
   { label: 'Segurança', href: '/#seguranca' },
   { label: 'FAQ', href: '/#faq' },
-  { label: 'Contato', href: '/#contato' },
+  { label: 'Contacto', href: '/#contato' },
 ]

@@ -5,6 +5,8 @@ import { Search, Shield, CheckCircle, ArrowRight, FileText, CreditCard, Globe } 
 import Button from '../ui/Button'
 import Badge from '../ui/Badge'
 import { useAuth } from '../../hooks/useAuth'
+import DocumentBackground from './DocumentBackground'
+import InstitutionalOverlay from './InstitutionalOverlay'
 
 const floatingCards = [
   {
@@ -48,31 +50,36 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Background */}
+      {/* Base gradient background */}
       <div className="absolute inset-0 bg-petroleum-gradient" />
-      
-      {/* Ambient light effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full bg-petroleum-500/20 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-gold-500/8 blur-[100px] pointer-events-none" />
 
-      {/* Grid pattern */}
+      {/* Animated document backgrounds — behind everything */}
+      <DocumentBackground />
+
+      {/* Institutional HUD overlays and grid */}
+      <InstitutionalOverlay />
+
+      {/* Ambient light effects */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full bg-petroleum-500/20 blur-[120px] pointer-events-none" style={{ zIndex: 2 }} />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-gold-500/8 blur-[100px] pointer-events-none" style={{ zIndex: 2 }} />
+      {/* Vignette to frame documents nicely */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(rgba(245,178,27,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(245,178,27,0.5) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
+          background: 'radial-gradient(ellipse 65% 70% at 50% 50%, transparent 40%, rgba(3,31,31,0.7) 100%)',
+          zIndex: 3,
         }}
       />
 
-      {/* Floating Cards */}
+      {/* Floating Cards — above vignette */}
       {floatingCards.map((card, i) => (
         <motion.div
           key={i}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 + card.delay, duration: 0.6 }}
-          className={`absolute hidden xl:flex ${card.pos} items-center gap-3 glass-dark border ${card.bg} rounded-2xl px-4 py-3 z-10 animate-float`}
-          style={{ animationDelay: `${card.delay}s` }}
+          className={`absolute hidden xl:flex ${card.pos} items-center gap-3 glass-dark border ${card.bg} rounded-2xl px-4 py-3 animate-float`}
+          style={{ animationDelay: `${card.delay}s`, zIndex: 10 }}
         >
           <card.icon size={18} className={card.color} />
           <div>
@@ -82,8 +89,8 @@ export default function HeroSection() {
         </motion.div>
       ))}
 
-      {/* Content */}
-      <div className="relative z-10 container-max px-4 md:px-8 pt-32 pb-20 text-center">
+      {/* Main content */}
+      <div className="relative px-4 md:px-8 pt-32 pb-20 text-center container-max" style={{ zIndex: 10 }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
