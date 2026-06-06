@@ -4,6 +4,7 @@ import MainLayout from './components/layout/MainLayout'
 import HomePage from './pages/HomePage'
 import SearchPage from './pages/SearchPage'
 import DashboardPage from './pages/DashboardPage'
+import RegisterDocumentPage from './pages/RegisterdocumentPage'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/pesquisar" element={<SearchPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/cadastrar-documento" element={<RegisterDocumentPage />} />
           </Route>
         </Routes>
       </AuthProvider>

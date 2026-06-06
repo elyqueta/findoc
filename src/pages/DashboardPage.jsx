@@ -5,7 +5,7 @@ import {
   User, FileText, Search, Settings, Shield, Bell, LogOut,
   CheckCircle, Clock, XCircle, Edit3, Upload, ChevronRight,
   Home, AlertCircle, Eye, Lock, Phone, Mail, MapPin, Calendar,
-  Trash2, Plus
+  Trash2, Plus, FilePlus
 } from 'lucide-react'
 import { useAuth } from '../hooks/useAuth'
 import Button from '../components/ui/Button'
@@ -41,6 +41,7 @@ function NavItem({ icon: Icon, label, active, onClick }) {
 }
 
 function DashboardHome({ user }) {
+  const navigate = useNavigate()
   return (
     <div>
       <div className="mb-8">
@@ -87,6 +88,26 @@ function DashboardHome({ user }) {
         </div>
       </motion.div>
 
+      {/* Quick action — Cadastrar */}
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.35 }}
+        className="card-premium border-gold-500/15 mb-6 cursor-pointer group"
+        onClick={() => navigate('/cadastrar-documento')}
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center group-hover:bg-gold-500/20 transition-colors">
+            <FilePlus size={18} className="text-gold-400" />
+          </div>
+          <div className="flex-1">
+            <p className="text-sm font-semibold">Cadastrar Documento</p>
+            <p className="text-xs text-white/35">Registe um novo documento pessoal no sistema</p>
+          </div>
+          <ChevronRight size={16} className="text-white/20 group-hover:text-gold-400 transition-colors" />
+        </div>
+      </motion.div>
+
       {/* Recent activity */}
       <h3 className="font-semibold mb-4 text-sm text-white/60 uppercase tracking-wider">Actividade Recente</h3>
       <div className="space-y-3">
@@ -95,7 +116,7 @@ function DashboardHome({ user }) {
             key={s.id}
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.35 + i * 0.07 }}
+            transition={{ delay: 0.4 + i * 0.07 }}
             className="glass-dark border border-white/5 rounded-xl p-4 flex items-center justify-between"
           >
             <div className="flex items-center gap-3">
@@ -118,6 +139,7 @@ function DashboardHome({ user }) {
 }
 
 function MyDocuments({ user }) {
+  const navigate = useNavigate()
   return (
     <div>
       <div className="flex items-center justify-between mb-8">
@@ -125,7 +147,7 @@ function MyDocuments({ user }) {
           <h2 className="text-2xl font-bold mb-1">Meus Documentos</h2>
           <p className="text-sm text-white/40">Gerir os seus documentos registados</p>
         </div>
-        <Button variant="gold" size="sm">
+        <Button variant="gold" size="sm" onClick={() => navigate('/cadastrar-documento')}>
           <Plus size={16} /> Adicionar
         </Button>
       </div>
@@ -357,7 +379,6 @@ export default function DashboardPage() {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState('home')
-  const [mobileNav, setMobileNav] = useState(false)
 
   if (!user) return <Navigate to="/" replace />
 
@@ -406,7 +427,17 @@ export default function DashboardPage() {
                 ))}
               </nav>
 
-              <div className="mt-4 pt-4 border-t border-white/5">
+              {/* Cadastrar Documento CTA */}
+              <div className="mt-3 pt-3 border-t border-white/5">
+                <button
+                  onClick={() => navigate('/cadastrar-documento')}
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-gold-400/70 hover:text-gold-400 hover:bg-gold-500/10 border border-dashed border-gold-500/20 hover:border-gold-500/40 transition-all text-left"
+                >
+                  <FilePlus size={17} /> Cadastrar Documento
+                </button>
+              </div>
+
+              <div className="mt-3 pt-3 border-t border-white/5">
                 <button
                   onClick={() => { logout(); navigate('/') }}
                   className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-red-400/70 hover:text-red-400 hover:bg-red-500/10 transition-all text-left"
@@ -433,6 +464,12 @@ export default function DashboardPage() {
                   <tab.icon size={13} /> {tab.label}
                 </button>
               ))}
+              <button
+                onClick={() => navigate('/cadastrar-documento')}
+                className="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium glass border border-dashed border-gold-500/25 text-gold-400/70"
+              >
+                <FilePlus size={13} /> Cadastrar
+              </button>
             </div>
           </div>
 
