@@ -9,7 +9,7 @@ export const HOW_IT_WORKS = [
   {
     step: '01',
     title: 'Registe-se',
-    description: 'Crie a sua conta segura com os seus dados pessoais e BI/NIF angolano.',
+    description: 'Crie a sua conta segura com os seus dados pessoais.',
     icon: 'UserPlus',
   },
   {
@@ -97,7 +97,7 @@ export const FAQS = [
   },
   {
     question: 'Posso registar um documento que encontrei?',
-    answer: 'Sim. Qualquer cidadão pode reportar um documento encontrado através da plataforma. Os dados serão verificados e o proprietário notificado.',
+    answer: 'Não. O registro do documento é de inteira responsabilidade do órgão gestor (administração / esquadra).',
   },
 ]
 

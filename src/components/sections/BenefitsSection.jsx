@@ -22,12 +22,12 @@ export default function BenefitsSection() {
               Por que FINDOC
             </p>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 leading-tight">
-              A solução digital que Angola
+              A solução digital que a sociedade
               <span className="text-gradient-gold"> precisava</span>
             </h2>
             <p className="text-white/45 leading-relaxed mb-8">
               Desenvolvido em parceria com o Ministério da Justiça e a Polícia Nacional,
-              o FINDOC é a resposta moderna ao problema de documentos perdidos em Angola.
+              o FINDOC é a resposta moderna ao problema de documentos perdidos.
               Tecnologia de alto nível ao serviço do cidadão.
             </p>
 
@@ -35,7 +35,6 @@ export default function BenefitsSection() {
             <div className="flex gap-8">
               {[
                 { v: '24h', l: 'Actualização' },
-                { v: '18', l: 'Províncias' },
                 { v: '100%', l: 'Gratuito' },
               ].map((item, i) => (
                 <div key={i}>

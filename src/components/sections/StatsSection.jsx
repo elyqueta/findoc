@@ -44,10 +44,10 @@ export default function StatsSection() {
           className="text-center mb-14"
         >
           <p className="text-xs font-semibold tracking-widest text-gold-500/70 uppercase mb-3">
-            Impacto Nacional
+            Impacto
           </p>
           <h2 className="text-3xl md:text-4xl font-display font-bold">
-            Angola confia no <span className="text-gradient-gold">FINDOC</span>
+            A sociedade confia no <span className="text-gradient-gold">FINDOC</span>
           </h2>
         </motion.div>
 

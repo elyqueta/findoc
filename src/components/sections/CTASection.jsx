@@ -34,7 +34,7 @@ export default function CTASection() {
             </h2>
 
             <p className="text-white/45 max-w-lg mx-auto mb-9 leading-relaxed">
-              Acesso gratuito para todos os cidadãos angolanos. Sem instalações, sem complicações.
+              Acesso gratuito para todas as pessoas. Sem instalações, sem complicações.
               A sua pesquisa começa aqui.
             </p>
 

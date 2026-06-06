@@ -36,8 +36,8 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Logo size="lg" className="mb-5" />
             <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-6">
-              A plataforma nacional angolana para rastreamento e recuperação de documentos perdidos. 
-              Conectando cidadãos e esquadras em todo o país.
+              A plataforma para rastreamento e recuperação de documentos perdidos. 
+              Conectando cidadãos e esquadras.
             </p>
             <div className="flex flex-col gap-2.5">
               <a href="mailto:info@findoc.ao" className="flex items-center gap-2.5 text-sm text-white/40 hover:text-gold-400 transition-colors">

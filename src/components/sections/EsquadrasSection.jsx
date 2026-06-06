@@ -21,7 +21,7 @@ export default function EsquadrasSection() {
             Esquadras <span className="text-gradient-gold">parceiras</span>
           </h2>
           <p className="text-white/40 max-w-xl mx-auto">
-            Mais de 347 esquadras e departamentos em todas as províncias angolanas integradas na plataforma.
+            Mais de 347 esquadras e departamentos integrados na plataforma.
           </p>
         </motion.div>
 
@@ -71,7 +71,7 @@ export default function EsquadrasSection() {
           className="text-center"
         >
           <p className="text-sm text-white/30">
-            E mais <span className="text-gold-400">341 esquadras</span> em todas as províncias de Angola
+            E mais <span className="text-gold-400">341 esquadras</span> 
           </p>
         </motion.div>
       </div>

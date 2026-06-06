@@ -98,7 +98,7 @@ export default function HeroSection() {
         >
           <Badge variant="gold" className="mb-6 mx-auto">
             <Globe size={11} />
-            Plataforma Nacional Oficial · Angola
+            Plataforma Oficial
           </Badge>
         </motion.div>
 
@@ -121,7 +121,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          O FINDOC conecta cidadãos angolanos com esquadras e entidades em todo o país,
+          O FINDOC conecta as com esquadras e entidades institucionais,
           facilitando a recuperação de documentos perdidos de forma digital, segura e imediata.
         </motion.p>
 
