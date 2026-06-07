@@ -56,9 +56,6 @@ function DocCard({ doc, delay }) {
 
       {doc.status === 'found' && (
         <div className="mt-4 pt-4 border-t border-white/5">
-          <Button variant="gold" size="sm" className="w-full">
-            Ver Detalhes para Levantamento
-          </Button>
         </div>
       )}
     </motion.div>
